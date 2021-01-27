@@ -11,7 +11,7 @@ fetch(backEndURL + 'users')
 
         const $userName = document.createElement('h3')
 
-        $userName.innerText = user.name
+        $userName.innerHTML = `<a href="http://localhost:3001/showUser.html?id=${user.id}">${user.name}</a>`
 
         $allUsers.append($userName)
     }))
