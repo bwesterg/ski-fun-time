@@ -3,7 +3,6 @@ class CreateTrails < ActiveRecord::Migration[6.0]
     create_table :trails do |t|
       t.string :name
       t.string :difficulty
-      t.boolean :has_skiied
 
       t.timestamps
     end
