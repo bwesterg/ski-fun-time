@@ -6,19 +6,18 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-
+Favorite.destroy_all
 Trail.destroy_all
 User.destroy_all
 
-sam = User.create({
-    name: "Sam"
-})
 
+uncle_bob = Trail.create(name: "Uncle Bob's", difficulty: "Green")
+easy_way = Trail.create(name: "Easy Way", difficulty: "Green")
+sundance = Trail.create(name: "Sundance", difficulty: "Blue")
 
-uncle_bob = Trail.create(name: "Uncle Bob's", difficulty: "Green", has_skiied: false, user: sam)
-easy_way = Trail.create(name: "Easy Way", difficulty: "Green", has_skiied: false, user: sam)
-sundance = Trail.create(name: "Sundance", difficulty: "Blue", has_skiied: false, user: sam)
+sam = User.create(name: "Sam")
 
+Favorite.create(user: sam, trail: uncle_bob, has_skied: false)
 
 
 
